@@ -1,0 +1,27 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  server:
+    #关闭自我保护模式
+    enable-self-preservation: false
+
+security:
+  user:
+    name: admin
+    password: admin
+  basic:
+    enabled: true
+
+spring:
+  application:
+    name: eureka
+
